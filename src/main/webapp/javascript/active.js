@@ -1,15 +1,12 @@
-AOS.init();
-let x = document.querySelectorAll('.nav-item');
-for (let i=0; i<x.length; i++) {
-    x[i].addEventListener('click', function (){
-        x[i].classList.add('active')
-        for(let j = 0; j<x.length; j++){
-            if(j===i){
-                continue;
-            }
-            else{
-                x[j].classList.remove('active');
-            }
-        }
-    });
-}
+
+
+let navbar_items = [document.querySelector('.item1'), document.querySelector('.item2'), document.querySelector('.item3'), document.querySelector('.item4'), document.querySelector('.item5'), document.querySelector('.item6')];
+
+navbar_items.forEach(nav_item => {
+    nav_item.addEventListener('mouseover', () => {
+        nav_item.classList.add('text-light');
+    })
+    nav_item.addEventListener('mouseout', () => {
+        nav_item.classList.remove('text-light');
+    })
+});
